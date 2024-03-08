@@ -1,0 +1,11 @@
+.coll{
+    width: 350px;
+    margin-left: 20px;
+}
+.coll p{
+    margin: 6px 0px;
+}
+.coll:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}

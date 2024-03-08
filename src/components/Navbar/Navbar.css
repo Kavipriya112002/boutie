@@ -1,0 +1,79 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px black;
+    flex-direction: row;
+    height: 100px;
+    box-shadow: 30PX 7PX 7PX rgb(240, 160, 173);
+ 
+ }
+ .nav-logo{
+     display: flex;
+     align-items: center;
+     gap:8px;
+     padding: 2px;
+     margin-top: 2px;
+     
+ }
+ .nav-logo p{
+     color: brown;
+     font-size: 38px;
+     font-weight: 600 ;
+ }
+ .nav_menu{
+     display: flex;
+     align-items: center;
+     list-style: none;
+     gap: 50px;
+     color: rgb(176, 92, 13);
+     font-size: 20px;
+     font-weight: 500;
+ }
+ .nav_menu li{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 3px;
+     cursor: pointer;
+     
+ }
+ .nav_menu hr{
+     border:none;
+     width:80%;
+     height: 3px;
+     border-radius: 10px;
+     background: red;
+ }
+ .nav_login_cart{
+     height: 100%;
+     width: auto;
+     display: flex;
+     align-items: center;
+     gap: 30 px;
+     flex-direction: row;
+    
+ }
+ .nav_login_cart{
+    max-height: 100%;
+    max-width: 100%;
+ }
+ .nav_login_cart button{
+     width: 157px;
+     height:58px;
+     outline: none;
+     border: 1px solid rgb(159, 152, 152);
+     border-radius: 75px;
+     color: rgb(213, 207, 207);
+     font-size: 20px;
+     font-weight: 500;
+     background: white;
+     cursor: pointer;
+ 
+ 
+ }
+ .nav_login_cart button :active{
+     background: rgb(101, 102, 103);
+ 
+ }

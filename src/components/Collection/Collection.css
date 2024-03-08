@@ -1,0 +1,24 @@
+.collection{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    height:90vh;
+}
+.collection P{
+    text-align: center;
+    margin: 50px;
+}
+
+.collection hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    
+}
+.collection-item{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}

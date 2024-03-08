@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Boutic from './page/Boutic';
+import Category from './page/Category';
+import Item from  './page/Item';
+import Carts from './page/Carts';
+import LoginUp from './page/LoginUp';
+import Abt from './page/Abt';
+import Second from './page/Second';
+
+
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Boutic/>} />
+        <Route path='/collection' element={<Second category="collection"/>}  />
+        <Route path='/accessories' element={<Category category="accessories"/>} />
+        <Route path='/about' element={<Abt category="about" />} />
+      <Route path='/product' element={<Item/>} >
+        <Route path=':productId' element={<Item/>}/>
+      </Route>
+      <Route path='/cart' element={<Carts/>} />
+      <Route path='/login' element={<LoginUp/>}/>
+      </Routes>
+      </BrowserRouter>
+      
     </div>
   );
 }

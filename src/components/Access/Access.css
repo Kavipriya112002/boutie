@@ -1,0 +1,23 @@
+.acc{
+    display: flew;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    height:90vh;
+}
+.acc P{
+    text-align: center;
+    margin: 50px;
+}
+
+.acc hr{
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    
+}
+.acc-item{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+}

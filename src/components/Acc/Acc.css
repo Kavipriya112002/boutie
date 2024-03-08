@@ -1,0 +1,11 @@
+.access{
+    width: 350px;
+    margin-left: 20px;
+}
+.access p{
+    margin: 6px 0px;
+}
+.access:hover{
+    transform: scale(1.05);
+    transition: 0.6s;
+}
