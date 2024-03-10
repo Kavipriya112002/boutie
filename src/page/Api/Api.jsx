@@ -1,50 +1,36 @@
-import React, { useState } from 'react'
- const api={
-    key: '5342d8887211a616232d83384e7d3bda',
-    base:'https://api.openweathermap.org/data/2.5/',
- };
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Api = () => {
-    const[search,setSearch]=useState("");
-    const[weather,setWeather]=useState({});
-    const SearchPressed=()=>{
-        fetch(`${api.base}weather/q=${search}&units=imperial&APPID=${api.key}`)
-        .then((res)=> res.json())
-        .then((result)=>{
-           setWeather(result);
-        });
-    }
-  return (
-    <div className='fore'>
-       <header className='fore-header'>
-          {/* HEADER*/}
-          <h1>Weather App</h1>
-          {/*Search Box - Input + Button*/}
-          <div>
-          <input 
-           type="text"
-           placeholder="Enter city/town.."
-           onChange={(e)=>setSearch(e.target.value)}
-           />
-           <button onClick={SearchPressed}>Search</button>
-          </div>
-          {typeof weather.main !="undefined"? (
-            <div>
-          {/*Location*/}
-          <p>{weather.name}</p>
-          {/*Temporature Celsius*/}
-          <p>{weather.main.temp}°C</p>
-          {/* Condition (Sunny )*/}
-          <p>{weather.weather[0].main}</p>
-          <p>({weather.weather[0].description})</p>
-          </div>)
-          :(
-            ""
-          )}
-          
-       </header>
-    </div>
-  )
-}
+  const [weatherData, setWeatherData] = useState(null);
+  const apiKey = '016b49b5972a045df9ad39adc19abf82'; // Replace 'YOUR_API_KEY' with your actual API key from OpenWeather
 
-export default Api
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=Tamilnadu&appid=${apiKey}`);
+        setWeatherData(response.data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    fetchData();
+  }, [apiKey]);
+
+  if (!weatherData) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      <h1><center>CHECK WEATHER DETAIL THROUGH OUT BOUTIQUE</center></h1>
+      <h2><center>Weather in {weatherData.name}</center></h2>
+      <p><center>Temperature: {weatherData.main.temp}°C</center></p>
+      <p><center>Weather: {weatherData.weather[0].description}</center></p>
+      <p><center>Wind speed: {weatherData.wind.speed} m/s</center></p>
+    </div>
+  );
+};
+
+export default Api;
